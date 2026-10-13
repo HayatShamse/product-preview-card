@@ -1,0 +1,269 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variables */
+:root {
+    --page-bg: #f2eee7;
+    --card-bg: #fffdf9;
+    --text: #25231f;
+    --muted: #77736c;
+    --green: #315b46;
+    --green-dark: #203f30;
+}
+
+/* Page */
+body {
+    min-height: 100vh;
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--page-bg);
+    color: var(--text);
+
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Product Card */
+.product-card {
+    display: flex;
+
+    width: 100%;
+    max-width: 780px;
+
+    overflow: hidden;
+
+    background-color: var(--card-bg);
+
+    border-radius: 14px;
+
+    box-shadow: 0 18px 50px rgba(39, 34, 26, 0.10);
+}
+
+/* Product Image */
+.product-image {
+    width: 48%;
+    background-color: #999;
+}
+
+.product-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    min-height: 560px;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Product Details */
+.product-details {
+    width: 52%;
+
+    padding: 42px 36px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Category */
+.category {
+    margin-bottom: 18px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+/* Product Title */
+h1 {
+    margin-bottom: 18px;
+
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(30px, 3vw, 42px);
+    font-weight: 400;
+
+    line-height: 1.08;
+}
+
+/* Description */
+.description {
+    margin-bottom: 20px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Features */
+.features {
+    margin: 0 0 24px 18px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* Prices */
+.price-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: auto;
+    margin-bottom: 8px;
+}
+
+/* Current Price */
+.current-price {
+    color: var(--green);
+
+    font-family: "DM Serif Display", serif;
+    font-size: 34px;
+}
+
+/* Old Price */
+.old-price {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Price Note */
+.price-note {
+    margin-bottom: 20px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+/* Add to Cart Button */
+.cart-button {
+    width: 100%;
+    min-height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: var(--green);
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+/* Cart Icon */
+.cart-button svg {
+    width: 19px;
+    height: 19px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Button Hover */
+.cart-button:hover {
+    background-color: var(--green-dark);
+}
+
+/* Button Click */
+.cart-button:active {
+    transform: scale(0.99);
+}
+
+/* Keyboard Focus */
+.cart-button:focus-visible {
+    outline: 3px solid #b5c8b9;
+    outline-offset: 3px;
+}
+
+/* Footer */
+.attribution {
+    margin-top: 18px;
+
+    color: var(--muted);
+
+    text-align: center;
+    font-size: 11px;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 620px) {
+
+    body {
+        padding: 20px 14px;
+    }
+
+    .product-card {
+        max-width: 420px;
+
+        flex-direction: column;
+    }
+
+    .product-image,
+    .product-details {
+        width: 100%;
+    }
+
+    .product-image img {
+        height: 310px;
+        min-height: 0;
+
+        object-fit: cover;
+        object-position: center 35%;
+    }
+
+    .product-details {
+        padding: 28px 25px;
+    }
+
+    h1 {
+        max-width: 300px;
+        font-size: 34px;
+    }
+
+    .description {
+        margin-bottom: 14px;
+    }
+
+    .features {
+        margin-bottom: 18px;
+    }
+
+    .price-container {
+        margin-top: 0;
+    }
+}
